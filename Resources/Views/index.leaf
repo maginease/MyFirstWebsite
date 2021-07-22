@@ -23,17 +23,17 @@
       
       <p>then, we will also declare <code>Mom</code></p>
       
-      <img src="https://cdn.discordapp.com/attachments/734414084480434200/867689984831127592/mom.png" width="400" height="500">
+      <img src="https://cdn.discordapp.com/attachments/734414084480434200/867689984831127592/mom.png" width="600" height="700">
           
   <p>What the initializer does is it iterates through the partners array whom your mama had sex with and tells whether yo mama is a whore by assigning <code>Prostitution</code> instance if there are any men other than yo dada who had sex with yo mama.</p>
   
   <p>Let's say yo mama has this input:</p>
   
-  <img src="https://cdn.discordapp.com/attachments/734414084480434200/867689982398169098/input.png" width="1000" height="200">
+  <img src="https://cdn.discordapp.com/attachments/734414084480434200/867689982398169098/input.png" width="1200" height="200">
       
       <p>Yo mama sure is a whore! Let's find out yo mama exists</p>
       
-      <img src="https://cdn.discordapp.com/attachments/734414084480434200/867689976288116736/result.png" width="1100" height="400">
+      <img src="https://cdn.discordapp.com/attachments/734414084480434200/867689976288116736/result.png" width="1400" height="400">
       
       <p>Swift tells us that <code>yoMama</code> is <code>nil</code>; you don't have a mom!</p>
       
