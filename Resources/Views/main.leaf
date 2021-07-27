@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <style>
+        
+        .forum {
+            background-color:violet;
+            
+            text-align: center;
+            border: 2px solid black;
+            margin: 20px;
+            padding: 30px;
+        }
+        
+        a:link {
+           font-size:50px;
+           color:white;
+        }
+        a:hover {
+            color:white
+        }
+        
+    </style>
+    <title>Welcome to my Page!</title>
+    </head>
+    
+    <body style="background-color:#AF33FF;">
+        
+        <h1 style="text-align:center; font-size:80px;">Welcome to My First Website!</h1>
+        <h1 style="text-align:center;"><strong> Forums </strong></h1>
+        
+        <div class="forum">
+        <a href="http://127.0.0.1:8080/myThread">Here's how to 패드립</a>
+        </div>
+        
+        <div class="forum">
+            
+<!--            <a href="http://127.0.0.1:8080/login">Community</a>-->
+                <a href="http://127.0.0.1:8080/community">Community</a>
+            </div>
+        
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    
+    <head>
+        
+        <title>Community</title>
+        
+        <style>
+        
+        .post {
+            
+            background-color:#C8DDDD;
+            padding:10px;
+            font-size:20px;
+            border:3px solid white;
+           
+        }
+        
+        </style>
+        
+    </head>
+    
+    <body style="background-color:#5B5F5F;">
+        
+<!--       logout section-->
+<!--       <div style="background-color:gray; border:2px solid white; text-size:30px;">Welcome,#(username)!-->
+<!--           <form method="get" action="/logOut"><input type="submit" value="Log Out"></form>-->
+<!--       </div>-->
+       
+<!--       post content section-->
+       
+       <form action="/post" method="post">
+           
+           <div style="text-align:center center; background-color:#458A8A;">
+           
+           <p><label for="name">name:</label><input type="text" name="name" required></p>
+           <p><label for="content">Content:</label></p>
+           <textarea name="content" style="width:600px; height:200px;" required></textarea></p>
+               
+<!--           <p><label for="file">Choose File:</label><input type="file" name:"file"></p>-->
+               
+           <p><input type="submit" value="Post"></p>
+               
+           </div>
+       </form>
+       
+<!--       posts-->
+
+    <ul>
+        
+        
+        #for(post in posts):
+        
+        <p><div class="post">
+                <p>#(post.name)</p>
+                <p>#(post.content)</p>
+                </div>
+        </p>
+        
+   
+        
+        #endfor
+        </ul>
+        
+    </body>
+    
+</html>

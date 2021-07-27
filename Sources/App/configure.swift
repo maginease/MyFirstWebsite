@@ -11,4 +11,7 @@ public func configure(_ app: Application) throws {
     // register routes
     try routes(app)
     app.views.use(.leaf)
+    app.databases.use(.postgres(hostname: "localhost", username:"minseo", password: "minseo"), as: .psql)
+//    app.migrations.add(createUserInfo())
+    app.migrations.add(createPost())
 }

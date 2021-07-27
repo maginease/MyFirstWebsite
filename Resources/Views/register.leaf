@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+    
+    <style>
+        
+        p {
+            padding:20px;
+        }
+        
+        button {
+            width:150px;
+            height:20px;
+        }
+        
+        input {
+            background-position:center center;
+        }
+        
+        </style>
+    
+    </head>
+
+<body style="background-color:#373D3E; text-align:center;">
+    
+    <div style="background-color:#8E9D9F; text-color:white; background-position:center center; padding:30px">
+        
+        <form action="/lrdb" method="post">
+        <p><label for="username">Username:</label>
+        <input type="text" value size="18" name="username" required></p>
+            
+        <p><label for="password">Password:</label>
+        <input type="password" value size="18" name="password" required></p>
+            
+        <p><input type="submit" value="Register"></p>
+        </form>
+        
+        
+        
+        </div>
+    
+    </body>
+
+</html>

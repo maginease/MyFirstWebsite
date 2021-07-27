@@ -17,7 +17,8 @@
 
 <body>
     
-    <p><h1><a href="http://127.0.0.1:8080/hello">Want to see some hot girls? Click Here!</a></h1></p>
+    <a href="http://127.0.0.1:8080">Go Back to Main Page</a>
+    <p><h1><a href="http://127.0.0.1:8080/HotGirls">Want to see some <mark>Hot Girls?</mark> Click Here!</a></h1></p>
     
  <p> <h1>Hello,#(name)!</h1> </p>
   <p><strong>Here's a way to 패드립 with Swift programming language:</strong></p>
@@ -46,7 +47,7 @@
       <img src="https://cdn.discordapp.com/attachments/734414084480434200/867689976288116736/result.png" width="1400" height="400">
       
       <p>Swift tells us that <code>yoMama</code> is <code>nil</code>; you don't have a mom!</p>
-      
+      <hr>
      <img src="https://media.giphy.com/media/XR9Dp54ZC4dji/giphy.gif">
 </body>
 </html>
