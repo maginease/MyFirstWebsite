@@ -9,50 +9,81 @@
         
         .post {
             
-            background-color:#C8DDDD;
+            background-color:#3E3E3E;
             padding:10px;
             font-size:20px;
-            border:3px solid white;
-           
+            border:1px solid #6D6D6D;
+            color:white;
+        }
+            
+        .username {
+            border-bottom: 2px solid gray;
+            font-family: sans-serif;
         }
         
+        .poster {
+            
+            background-color:#B3B4B4;
+            width:60%;
+            border:double;
+            display:block;
+            margin:auto;
+            
+        }
+        
+        .postContainer {
+            
+            position:relative;
+            top:4px;
+            margin:auto;
+            width:90%
+            
+        }
+        
+        .topBanner {
+            background-color:#3E3E3E;
+            border:2px solid #6D6D6D;
+            position:relative;
+            color:white;
+            bottom:10px;
+        }
+            
         </style>
         
     </head>
     
-    <body style="background-color:#5B5F5F;">
+    <body style="background-color:#000000;">
         
 <!--       logout section-->
-<!--       <div style="background-color:gray; border:2px solid white; text-size:30px;">Welcome,#(username)!-->
+       <div class="topBanner" >Welcome!
 <!--           <form method="get" action="/logOut"><input type="submit" value="Log Out"></form>-->
-<!--       </div>-->
+       </div>
        
 <!--       post content section-->
        
        <form action="/post" method="post">
            
-           <div style="text-align:center center; background-color:#458A8A;">
+           <div class="poster">
            
-           <p><label for="name">name:</label><input type="text" name="name" required></p>
-           <p><label for="content">Content:</label></p>
-           <textarea name="content" style="width:600px; height:200px;" required></textarea></p>
+           <p><label for="name" style="position:relative; left:10px;">name:</label><input type="text" name="name" style="position:relative; left:10px;" required></p>
+           <p><label for="content" style="position:relative; left:10px;">Content:</label></p>
+           <textarea name="content" style="width:97%; height:200px; position:relative; left:10px;" required></textarea></p>
                
 <!--           <p><label for="file">Choose File:</label><input type="file" name:"file"></p>-->
                
-           <p><input type="submit" value="Post"></p>
+           <p><input type="submit" value="Post" ></p>
                
            </div>
        </form>
        
 <!--       posts-->
 
-    <ul>
-        
-        
+    <div class="postContainer">
+                
         #for(post in posts):
         
         <p><div class="post">
-                <p>#(post.name)</p>
+                <p><div class="username">#(post.name)</div></p>
                 <p>#(post.content)</p>
                 </div>
         </p>
@@ -60,7 +91,7 @@
    
         
         #endfor
-        </ul>
+        </div>
         
     </body>
     
