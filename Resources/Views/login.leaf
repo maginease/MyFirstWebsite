@@ -27,7 +27,7 @@
         
         <form action="/loginverify" method="post">
         <p><label for="username">Username</label><input type="text" name="username" required></p>
-        <p><label for="password>">Password</label><input type="text" name="password" reqired></p>
+        <p><label for="password>">Password</label><input type="password" name="password" reqired></p>
         <p><input type="submit" value="Login"></p>
         </form>
         

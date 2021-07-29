@@ -47,10 +47,28 @@ func routes(_ app: Application) throws {
 
         let userinfo = try req.content.decode(UserInfo.self)
 
-        currentLogin = userinfo
+        return UserInfo.query(on: req.db).all().flatMap { users in
+            
+            for user in users {
+                
+                if user.username == userinfo.username {
+                    
+                    return userinfo.encodeResponse(for: req).map { i in
+                        return req.redirect(to: "register")
+                        //used this to make req.redirect to be of type EventLoopFuture<Response>
+                    }
+                }
+                
+            }
+            
+            currentLogin = userinfo
 
-        return userinfo.create(on: req.db).map { userinfo in
-            return req.redirect(to: "/community")
+            return userinfo.create(on: req.db).map { userinfo in
+                return req.redirect(to: "/community")
+            
+        }
+        
+        
         }
     }
     
