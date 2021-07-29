@@ -28,6 +28,12 @@ func routes(_ app: Application) throws {
 
     app.get("community") { req->EventLoopFuture<View> in
         
+        if currentLogin == nil {
+            
+            return req.view.render("login")
+            
+        }
+        
         return CommunityPost.query(on: req.db).all().flatMap { posts in
             
          
@@ -67,4 +73,35 @@ func routes(_ app: Application) throws {
             return req.redirect(to: "/community")
         }
     }
+    
+    app.post("loginverify") { req-> EventLoopFuture<View> in
+        
+        let data = try req.content.decode(login.self)
+        
+        
+        return UserInfo.query(on: req.db).all().flatMap { userinfo in
+            
+            for user in userinfo {
+                
+                if user.username == data.username && user.password == data.password {
+                    
+                    return CommunityPost.query(on: req.db).all().flatMap { posts in
+                        
+                        currentLogin = user
+                        
+                        return req.view.render("community",["posts":posts])
+                    }
+                }
+                
+                if user.username == data.username && user.password != data.password {
+                    
+                    return req.view.render("login")
+                }
+            }
+            
+            return req.view.render("login")
+        }
+    }
+    
+   
 }

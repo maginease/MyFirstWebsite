@@ -55,8 +55,8 @@
     <body style="background-color:#000000;">
         
 <!--       logout section-->
-       <div class="topBanner" >Welcome!
-<!--           <form method="get" action="/logOut"><input type="submit" value="Log Out"></form>-->
+       <div class="topBanner" >Welcome! 
+           <form method="get" action="/logOut"><input type="submit" value="Log Out"></form>
        </div>
        
 <!--       post content section-->
