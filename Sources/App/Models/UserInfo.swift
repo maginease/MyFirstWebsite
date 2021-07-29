@@ -22,7 +22,9 @@ final class UserInfo:Content,Model {
     @Field(key: "password")
     var password:String
     
-    init(username:String,password:String ,id:UUID? = nil) {
+    var posts:[CommunityPost] = []
+    
+    init(password:String ,id:UUID? = nil,username:String) {
         self.username = username
         self.password = password
         self.id = id

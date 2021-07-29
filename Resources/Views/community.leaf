@@ -65,7 +65,7 @@
            
            <div class="poster">
            
-           <p><label for="name" style="position:relative; left:10px;">name:</label><input type="text" name="name" style="position:relative; left:10px;" required></p>
+<!--           <p><label for="username" style="position:relative; left:10px;">name:</label><input type="text" name="username" style="position:relative; left:10px;" required></p>-->
            <p><label for="content" style="position:relative; left:10px;">Content:</label></p>
            <textarea name="content" style="width:97%; height:200px; position:relative; left:10px;" required></textarea></p>
                
@@ -83,7 +83,7 @@
         #for(post in posts):
         
         <p><div class="post">
-                <p><div class="username">#(post.name)</div></p>
+                <p><div class="username">#(post.username)</div></p>
                 <p>#(post.content)</p>
                 </div>
         </p>

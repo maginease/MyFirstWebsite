@@ -36,8 +36,8 @@
         
         <div class="forum">
             
-<!--            <a href="http://127.0.0.1:8080/login">Community</a>-->
-                <a href="http://127.0.0.1:8080/community">Community</a>
+            <a href="http://127.0.0.1:8080/login">Community</a>
+<!--                <a href="http://127.0.0.1:8080/community">Community</a>-->
             </div>
         
     </body>
