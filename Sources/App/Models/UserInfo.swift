@@ -45,3 +45,9 @@ struct createUserInfo:Migration {
     
 }
 
+struct registerInfo:Content {
+    
+    var username:String
+    var password:String
+    var cfmpwd:String
+}

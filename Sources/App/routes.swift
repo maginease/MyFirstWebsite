@@ -44,9 +44,20 @@ func routes(_ app: Application) throws {
   
     
     app.post("lrdb") { req->EventLoopFuture<Response> in
-
-        let userinfo = try req.content.decode(UserInfo.self)
-
+        
+        //get register form data
+        let registerInfo = try req.content.decode(registerInfo.self)
+        //redirects to register page if cfmpwd is not equal to pwd
+        guard registerInfo.cfmpwd == registerInfo.password else {
+            
+            return registerInfo.encodeResponse(for: req).map { _ in
+                return req.redirect(to: "/register")
+            }
+        }
+        
+        //assigns UserInfo if confirm password and password is the same.
+        let userinfo = UserInfo(password: registerInfo.password, username: registerInfo.username)
+        
         return UserInfo.query(on: req.db).all().flatMap { users in
             
             for user in users {

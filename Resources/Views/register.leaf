@@ -34,6 +34,9 @@
         <p><label for="password">Password:</label>
         <input type="password" value size="18" name="password" required></p>
             
+        <p><label for="cfmpwd">Password:</label>
+        <input type="password" value size="18" name="cfmpwd" required></p>
+            
         <p><input type="submit" value="Register"></p>
         </form>
         
