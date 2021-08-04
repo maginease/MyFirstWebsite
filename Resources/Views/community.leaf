@@ -55,7 +55,7 @@
     <body style="background-color:#000000;">
         
 <!--       logout section-->
-       <div class="topBanner" >Welcome! 
+       <div class="topBanner" >Welcome!
            <form method="get" action="/logOut"><input type="submit" value="Log Out"></form>
        </div>
        
@@ -64,14 +64,13 @@
        <form action="/post" method="post">
            
            <div class="poster">
-           
-<!--           <p><label for="username" style="position:relative; left:10px;">name:</label><input type="text" name="username" style="position:relative; left:10px;" required></p>-->
+    
            <p><label for="content" style="position:relative; left:10px;">Content:</label></p>
            <textarea name="content" style="width:97%; height:200px; position:relative; left:10px;" required></textarea></p>
                
 <!--           <p><label for="file">Choose File:</label><input type="file" name:"file"></p>-->
                
-           <p><input type="submit" value="Post" ></p>
+           <p><input type="submit" value="Post"></p>
                
            </div>
        </form>
@@ -83,7 +82,16 @@
         #for(post in posts):
         
         <p><div class="post">
-                <p><div class="username">#(post.username)</div></p>
+                <p><div class="username">#(post.username)
+                
+                #for(currentuser in currentUser):
+                    #if(post.username == currentuser.username):
+                     <form action="/deletePost/#(post.id)" method="post"><input type="submit" value="delete" style="margin-left:95%;position:relative; bottom:20px;"></form>
+                    #endif
+                #endfor
+                
+                </div>
+                </p>
                 <p>#(post.content)</p>
                 </div>
         </p>

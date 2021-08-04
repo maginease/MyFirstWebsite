@@ -34,10 +34,13 @@ func routes(_ app: Application) throws {
             
         }
         
+        let userForPassing = CommunityPost(content: "", username: "", user: nil)
+        userForPassing.username = currentLogin!.username
+        
         return CommunityPost.query(on: req.db).all().flatMap { posts in
             
          
-            return req.view.render("community",["posts":posts])
+            return req.view.render("community",["posts":posts,"currentUser":[userForPassing]])
         }
     }
 
@@ -98,7 +101,7 @@ func routes(_ app: Application) throws {
         post.username = currentLogin!.username
         //assigns user to the post
         
-        return post.create(on: req.db).map { post in
+        return post.create(on: req.db).map { _ in
             return req.redirect(to: "/community")
         }
     }
@@ -107,6 +110,10 @@ func routes(_ app: Application) throws {
         
         let data = try req.content.decode(login.self)
         
+        //create userForPassing to send [CommunityPost] data to html through leaf
+        let userForPassing = CommunityPost(content: "", username: "", user: nil)
+        userForPassing.username = data.username
+        //assign the username
         
         return UserInfo.query(on: req.db).all().flatMap { userinfo in
             
@@ -118,19 +125,40 @@ func routes(_ app: Application) throws {
                         
                         currentLogin = user
                         
-                        return req.view.render("community",["posts":posts])
+                        return req.view.render("community",["posts":posts,"currentUser":[userForPassing]])
                     }
                 }
                 
                 if user.username == data.username && user.password != data.password {
                     
-                    return req.view.render("login")
+                    return req.view.render("login",["errorMessage":"Wrong Password"])
                 }
             }
             
-            return req.view.render("login")
+            return req.view.render("login",["errorMessage":"Username Not Found"])
         }
     }
     
+    
+    app.post("deletePost",":id") { req->EventLoopFuture<Response> in
+        
+        let postId = req.parameters.get("id")
+        
+        return CommunityPost.query(on: req.db).all().map { posts in
+            
+            for post in posts {
+                
+                if "\(post.id!)" == postId {
+                    
+                    _ = post.delete(on: req.db)
+                    
+                    return req.redirect(to: "/community")
+                }
+                
+                
+            }
+            return req.redirect(to: "/")
+        }
+    }
    
 }

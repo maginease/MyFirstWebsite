@@ -25,11 +25,13 @@ final class CommunityPost:Content,Model {
     
     init() {}
    
-    init(id:UUID? = nil,content:String,username:String? = nil) {
+    init(id:UUID? = nil,content:String,username:String? = nil,user:UserInfo? = nil) {
         
         self.id = id
         self.content = content
         self.username = ""
+        self.user = user
+        
     }
     
    
@@ -38,7 +40,7 @@ final class CommunityPost:Content,Model {
 struct createPost:Migration {
     
     func prepare(on database: Database) -> EventLoopFuture<Void> {
-        return database.schema("CommunityPost").id().field("content",.string).field("username",.string).create()
+        return database.schema("CommunityPost").id().field("content",.string).field("username",.string).field("user",.data).create()
     }
     
     func revert(on database: Database) -> EventLoopFuture<Void> {
