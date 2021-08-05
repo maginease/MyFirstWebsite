@@ -37,8 +37,8 @@
         <p><input type="submit" value="Login"></p>
         </form>
         
-        <p>New User? <a href="http://127.0.0.1:8080/register">register</a></p>
-        <p><a href="http://127.0.0.1:8080/">Back to Main Page</a></p>
+        <p>New User? <a href="/register">register</a></p>
+        <p><a href="/">Back to Main Page</a></p>
         
         </div>
    

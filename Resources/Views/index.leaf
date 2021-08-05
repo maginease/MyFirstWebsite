@@ -17,8 +17,8 @@
 
 <body>
     
-    <a href="http://127.0.0.1:8080">Go Back to Main Page</a>
-    <p><h1><a href="http://127.0.0.1:8080/HotGirls">Want to see some <mark>Hot Girls?</mark> Click Here!</a></h1></p>
+    <a href="/">Go Back to Main Page</a>
+    <p><h1><a href="/HotGirls">Want to see some <mark>Hot Girls?</mark> Click Here!</a></h1></p>
     
  <p> <h1>Hello,#(name)!</h1> </p>
   <p><strong>Here's a way to 패드립 with Swift programming language:</strong></p>

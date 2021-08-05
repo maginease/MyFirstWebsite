@@ -31,12 +31,12 @@
         <h1 style="text-align:center;"><strong> Forums </strong></h1>
         
         <div class="forum">
-        <a href="http://127.0.0.1:8080/myThread">Here's how to 패드립</a>
+        <a href="/myThread">Here's how to 패드립</a>
         </div>
         
         <div class="forum">
             
-            <a href="http://127.0.0.1:8080/login">Community</a>
+            <a href="/login">Community</a>
 <!--                <a href="http://127.0.0.1:8080/community">Community</a>-->
             </div>
         
