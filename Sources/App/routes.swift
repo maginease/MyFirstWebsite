@@ -68,7 +68,7 @@ func routes(_ app: Application) throws {
                 if user.username == userinfo.username {
                     
                     return userinfo.encodeResponse(for: req).map { i in
-                        return req.redirect(to: "register")
+                        return req.redirect(to: "/register")
                         //used this to make req.redirect to be of type EventLoopFuture<Response>
                     }
                 }
@@ -77,7 +77,7 @@ func routes(_ app: Application) throws {
             
             currentLogin = userinfo
 
-            return userinfo.create(on: req.db).map { userinfo in
+            return userinfo.create(on: req.db).map { _ in
                 return req.redirect(to: "/community")
             
         }

@@ -55,7 +55,11 @@
     <body style="background-color:#000000;">
         
 <!--       logout section-->
-       <div class="topBanner" >Welcome!
+       <div class="topBanner" >
+           #for(currentuser in currentUser):
+              Welcome, #(currentuser.username)!
+           #endfor
+          
            <form method="get" action="/logOut"><input type="submit" value="Log Out"></form>
        </div>
        

@@ -7,13 +7,17 @@
         <style>
             
             p {
-                padding:20px;
+                padding:15px;
             }
             
-            button {
-                width:150px;
-                height:20px;
-            }
+           .loginsection {
+               background-color:#8E9D9F;
+               background-position:center center;
+               padding:30px;
+               margin:auto;
+               width:40%;
+               box-sizing:border-box;
+           }
             
             </style>
         
@@ -23,8 +27,9 @@
 <body style="background-color:#373D3E; text-align:center;">
     
     
-    <div style="background-color:#8E9D9F; text-color:white; background-position:center center; padding:30px">
+    <div class="loginsection">
         
+        <strong style="font-size:50px; text-align:center;">Login</strong>
         <form action="/loginverify" method="post">
         <p><label for="username">Username</label><input type="text" name="username" required></p>
         <p><label for="password>">Password</label><input type="password" name="password" reqired></p>
@@ -33,7 +38,7 @@
         </form>
         
         <p>New User? <a href="http://127.0.0.1:8080/register">register</a></p>
-        
+        <p><a href="http://127.0.0.1:8080/">Back to Main Page</a></p>
         
         </div>
    

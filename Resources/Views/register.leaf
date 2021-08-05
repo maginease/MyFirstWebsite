@@ -7,7 +7,7 @@
     <style>
         
         p {
-            padding:20px;
+            padding:15px;
         }
         
         button {
@@ -19,14 +19,24 @@
             background-position:center center;
         }
         
+        .registersection {
+            background-color:#8E9D9F;
+            background-position:center center;
+            padding:30px;
+            margin:auto;
+            width:40%;
+            box-sizing:border-box;
+        }
+        
         </style>
     
     </head>
 
 <body style="background-color:#373D3E; text-align:center;">
     
-    <div style="background-color:#8E9D9F; text-color:white; background-position:center center; padding:30px">
+    <div class="registersection">
         
+        <strong style="font-size:50px; text-align:center;">Register</strong>
         <form action="/lrdb" method="post">
         <p><label for="username">Username:</label>
         <input type="text" value size="18" name="username" required></p>
@@ -40,7 +50,7 @@
         <p><input type="submit" value="Register"></p>
         </form>
         
-        
+        <p><a href="http://127.0.0.1:8080/">Back to Main Page</a></p>
         
         </div>
     
